@@ -1,0 +1,7 @@
+
+.active{
+    border-radius: 10px;
+    background-color: rgb(181, 181, 250);
+    border-left: 5px solid rgb(143, 143, 252);
+    color: rgb(5, 5, 101);
+}
