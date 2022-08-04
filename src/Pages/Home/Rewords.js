@@ -40,13 +40,13 @@ const Rewords = () => {
                 </div>
                 <div className="sm:ml-3">
                     <div className="" data-aos="zoom-in-left" data-aos-delay="100" data-aos-duration="800">
-                        <div class="stats w-full border-l-4 border border-secondary shadow mb-5">
-                            <div class="stat">
-                                <div class="stat-figure hidden md:block text-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                        <div className="stats w-full border-l-4 border border-secondary shadow mb-5">
+                            <div className="stat">
+                                <div className="stat-figure hidden md:block text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                                 </div>
-                                <div class="stat-title text-cyan-900 font-bold">A+ students</div>
-                                <div class="stat-value text-2xl sm:text-4xl">
+                                <div className="stat-title text-cyan-900 font-bold">A+ students</div>
+                                <div className="stat-value text-2xl sm:text-4xl">
                                 <CountUp start={focus ? 0 : null} end={150} duration={4} redraw={true}>
                                     <VisibilitySensor onChange={(isVisible) => {
                                             if (isVisible) { setFocus(true); }
@@ -54,35 +54,35 @@ const Rewords = () => {
                                     </VisibilitySensor>
                                 </CountUp>   
                                 +</div>
-                                <div class="stat-desc">↗︎ 400 (22%)</div>
+                                <div className="stat-desc">↗︎ 400 (22%)</div>
                             </div>
                             
-                            <div class="stat">
-                                <div class="stat-figure hidden md:block text-secondary">
-                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                            <div className="stat">
+                                <div className="stat-figure hidden md:block text-secondary">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                                 </div>
-                                <div class="stat-title font-bold text-cyan-900">Teachers</div>
-                                <div class="stat-value text-2xl sm:text-4xl"><CountUp duration={3} end={25} />+</div>
-                                <div class="stat-desc">↘︎ 90 (14%)</div>
+                                <div className="stat-title font-bold text-cyan-900">Teachers</div>
+                                <div className="stat-value text-2xl sm:text-4xl"><CountUp duration={3} end={25} />+</div>
+                                <div className="stat-desc">↘︎ 90 (14%)</div>
                             </div>
                         </div>
-                        <div class="stats w-full border-l-4 border border-secondary shadow">
-                            <div class="stat w-full">
-                                <div class="stat-figure hidden md:block text-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                        <div className="stats w-full border-l-4 border border-secondary shadow">
+                            <div className="stat w-full">
+                                <div className="stat-figure hidden md:block text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                                 </div>
-                                <div class="stat-title font-bold text-cyan-900">Gardgents</div>
-                                <div class="stat-value text-2xl sm:text-4xl"><CountUp duration={3} end={120} />+</div>
-                                <div class="stat-desc">↗︎ 400 (22%)</div>
+                                <div className="stat-title font-bold text-cyan-900">Gardgents</div>
+                                <div className="stat-value text-2xl sm:text-4xl"><CountUp duration={3} end={120} />+</div>
+                                <div className="stat-desc">↗︎ 400 (22%)</div>
                             </div>
                             
-                            <div class="stat w-full">
-                                <div class="stat-figure hidden md:block text-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                            <div className="stat w-full">
+                                <div className="stat-figure hidden md:block text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                                 </div>
-                                <div class="stat-title font-bold text-cyan-900">Students</div>
-                                <div class="stat-value text-2xl sm:text-4xl"><CountUp duration={5} end={380} />+</div>
-                                <div class="stat-desc">↘︎ 90 (14%)</div>
+                                <div className="stat-title font-bold text-cyan-900">Students</div>
+                                <div className="stat-value text-2xl sm:text-4xl"><CountUp duration={5} end={380} />+</div>
+                                <div className="stat-desc">↘︎ 90 (14%)</div>
                             </div>
                         </div>
                         <button className='btn btn-secondary hidden btn-sm mt-4 md:block text-white font-bold'>Register now</button>

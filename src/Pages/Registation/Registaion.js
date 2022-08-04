@@ -1,27 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import RegisterModul from '../Modul/RegisterModul';
 
 const Registaion = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
     const [sector, setData] = useState('student');
     const [gender, setGender] = useState('male');
+    const [registerModul, setRegisterModul] = useState('data');
+    console.log(registerModul);
+
+
     console.log(sector);
     
-    const onSubmit = data => {
-        console.log(data)
+    const onSubmit = async data => {
         
         const formData = {
             name: data.name,
             address: data.address,
             email: data.email,
+            password: data.password,
             phone: data.phone,
             sector: sector,
             gender: gender,
+            age: data.age,
             gpa: data.gpa,
             class: data.class,
             subject: data.subject,
         }
-        console.log(formData);
+        // send data backend
+        fetch(`http://localhost:5000/applyUser/${data.email}`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(formData)
+            })
+            .then(res => res.json())
+            .then(inserted => {
+                if(inserted.insertedId){
+                    reset()
+                    setRegisterModul(formData)
+                    toast.success('Apply successful');
+                }else{
+                    toast.error('Opps no..! Please try again.')
+                }
+            })
     }
     return (
         <div className='h-screen mt-[66px] sm:mt-0 bg-base-200 flex items-center'>
@@ -78,6 +103,7 @@ const Registaion = () => {
                             </label>
                         </div>
                     </div>
+                    
                     <div className="flex justify-between">
                         <div className="form-control w-[48%] max-w-xs">
                             <label className="label">
@@ -125,6 +151,52 @@ const Registaion = () => {
                             <label className="label">
                             {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                             {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <div className="form-control w-[48%] max-w-xs">
+                            <label className="label">
+                                <span className="label-text text-cyan-900 font-bold">Your Age</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                placeholder="Your Age" 
+                                className="input border border-cyan-800 rounded-md input-bordered w-full max-w-xs" 
+                                {...register("age", {
+                                    required: {
+                                        value: true,
+                                        message: 'Your Age is required'  
+                                    },
+                                })}
+                            />
+                            <label className="label">
+                            {errors.age?.type === 'required' && <span className="label-text-alt text-red-500">{errors.age.message}</span>}
+                            </label>
+                        </div>
+                        <div className="form-control w-[48%] max-w-xs">
+                            <label className="label">
+                                <span className="label-text text-cyan-900 font-bold">Password</span>
+                            </label>
+                            <input 
+                                type="password" 
+                                placeholder="Password" 
+                                className="input border border-cyan-800 rounded-md input-bordered w-full max-w-xs" 
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is required'  
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Must be 6 characters longer'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                            {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
                     </div>
@@ -205,22 +277,22 @@ const Registaion = () => {
                                 <span className="label-text text-cyan-900 font-bold">Select Your Sector</span>
                             </label>
                             <div className="flex mb-3">
-                                <div class="form-control mr-2">
-                                    <label class="cursor-pointer flex items-center">
-                                        <span class="label-text font-bold mr-2">Teacher</span> 
-                                        <input type="radio" value="teacher" onChange={e => setData(e.target.value)} name="sector" checked={sector === "teacher"? true: false} class="radio checked:bg-secondary"/>
+                                <div className="form-control mr-2">
+                                    <label className="cursor-pointer flex items-center">
+                                        <span className="label-text font-bold mr-2">Teacher</span> 
+                                        <input type="radio" value="teacher" onChange={e => setData(e.target.value)} name="sector" checked={sector === "teacher"? true: false} className="radio checked:bg-secondary"/>
                                     </label>
                                 </div>
-                                <div class="form-control mr-2">
-                                    <label class="cursor-pointer flex items-center">
-                                        <span class="label-text font-bold mr-2">Student</span> 
-                                        <input type="radio" name="sector" value="student" onChange={e => setData(e.target.value)} checked={sector === "student"? true: false} class="radio checked:bg-cyan-800"/>
+                                <div className="form-control mr-2">
+                                    <label className="cursor-pointer flex items-center">
+                                        <span className="label-text font-bold mr-2">Student</span> 
+                                        <input type="radio" name="sector" value="student" onChange={e => setData(e.target.value)} checked={sector === "student"? true: false} className="radio checked:bg-cyan-800"/>
                                     </label>
                                 </div>
-                                <div class="form-control">
-                                    <label class="cursor-pointer flex items-center">
-                                        <span class="label-text font-bold mr-2">Garden</span> 
-                                        <input type="radio" name="sector" value="garden" onChange={e => setData(e.target.value)} checked={sector === "garden"? true: false} class="radio checked:bg-blue-500"/>
+                                <div className="form-control">
+                                    <label className="cursor-pointer flex items-center">
+                                        <span className="label-text font-bold mr-2">Garden</span> 
+                                        <input type="radio" name="sector" value="garden" onChange={e => setData(e.target.value)} checked={sector === "garden"? true: false} className="radio checked:bg-blue-500"/>
                                     </label>
                                 </div>
                             </div>
@@ -230,16 +302,16 @@ const Registaion = () => {
                                 <span className="label-text text-cyan-900 font-bold">Select Your Gender</span>
                             </label>
                             <div className="flex mb-3">
-                                <div class="form-control mr-2">
-                                    <label class="cursor-pointer flex items-center">
-                                        <span class="label-text font-bold mr-2">Male</span> 
-                                        <input type="radio" name="gender" value="male" onChange={e => setGender(e.target.value)} checked={gender === "male"? true: false} class="radio checked:bg-cyan-800"/>
+                                <div className="form-control mr-2">
+                                    <label className="cursor-pointer flex items-center">
+                                        <span className="label-text font-bold mr-2">Male</span> 
+                                        <input type="radio" name="gender" value="male" onChange={e => setGender(e.target.value)} checked={gender === "male"? true: false} className="radio checked:bg-cyan-800"/>
                                     </label>
                                 </div>
-                                <div class="form-control">
-                                    <label class="cursor-pointer flex items-center">
-                                        <span class="label-text font-bold mr-2">Female</span> 
-                                        <input type="radio" name="gender" value="female" onChange={e => setGender(e.target.value)} checked={gender === "female"? true: false} class="radio checked:bg-blue-500"/>
+                                <div className="form-control">
+                                    <label className="cursor-pointer flex items-center">
+                                        <span className="label-text font-bold mr-2">Female</span> 
+                                        <input type="radio" name="gender" value="female" onChange={e => setGender(e.target.value)} checked={gender === "female"? true: false} className="radio checked:bg-blue-500"/>
                                     </label>
                                 </div>
                             </div>
@@ -248,6 +320,7 @@ const Registaion = () => {
                     <input className='btn w-full uppercase font-bold' type="submit" value="submit"  />
                 </form>
             </div>
+            { registerModul && <RegisterModul registerModul={registerModul} />}
         </div>
     );
 };

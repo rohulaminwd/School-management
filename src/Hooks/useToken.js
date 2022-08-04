@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 
-const useToken = user => {
+const useToken = (user) => {
     const [token, setToken] = useState('');
 
     useEffect(() => {
         const email = user?.user?.email;
-        const name = user?.user?.displayName;
-        const currentUser= {email: email, name:name};
+        console.log('email', email)
         if(email){
-            fetch(`https://arcane-journey-12889.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:5000/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'                    
                 },
-                body: JSON.stringify(currentUser)
+                body: JSON.stringify({email})
                 })
                 .then(res => res.json())
                 .then(data => {

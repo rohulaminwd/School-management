@@ -18,7 +18,7 @@ const ContactUs = () => {
         <div className='my-10  ox-hidden'>
             <h1 className='text-2xl md:text-4xl text-center py-5 text-cyan-900 font-bold'>Contact Us</h1>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <div className="border rounded-xl shadow-box p-2 md:p-4" data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="800">
+                <div className="border bg-blue-100 rounded-xl shadow-box p-2 md:p-4" data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="800">
                     <h1 className='text-xl font-bold'>Contact information</h1>
                     <div className="">
                         <p className='text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id a sint incidunt. expedita fugit labore omnis!</p>

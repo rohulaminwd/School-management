@@ -24,11 +24,3 @@ export default auth;
 
 
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAHKZQskNyE3duKjAEBngrMQtsB9Ka4TMY",
-//   authDomain: "manufacture-5aaff.firebaseapp.com",
-//   projectId: "manufacture-5aaff",
-//   storageBucket: "manufacture-5aaff.appspot.com",
-//   messagingSenderId: "813537792697",
-//   appId: "1:813537792697:web:c685d0c2d1a4e4bf608168"
-// };

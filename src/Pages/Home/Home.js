@@ -12,7 +12,7 @@ import Teachers from './Teachers';
 
 const Home = () => {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto bg-base-100">
             <Banner></Banner>
             <BannerTop />
             <div className='px-2 md:px-8 lg:px-16 ox-hidden'>

@@ -11,8 +11,8 @@ const TeacherCard = ({teacher}) => {
                     <div className='cursor-pointer'><a className='text-white font-bold text-xl' href={`mailto: ${teacher.email}`}><SiGmail /></a></div>
                     <div className='cursor-pointer'><a className='text-white font-bold text-xl' href={`tel: ${teacher.phone}`}><FaPhone /></a></div>
                 </div>
-                <div class="avatar -translate-x-1/2 left-1/2 absolute z-10 top-5">
-                    <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="avatar -translate-x-1/2 left-1/2 absolute z-10 top-5">
+                    <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={teacher.img} alt='teacher' />
                     </div>
                 </div>

@@ -66,9 +66,9 @@ const Parches = () => {
     return (
         <div className='mt-20 mx-2 md:mx-8 lg:mx-16'>
             <h1 className='text-2xl lg:text-4xl my-5 font-bold text-center text-primary'>{product.name}</h1>
-            <div class="grid lg:w-[80%] mx-auto sm:shadow-xl sm:border rounded-xl border-blue-200 md:border-x-8 grid-cols-1 md:grid-cols-2 gap-2 justify-center items-center py-4">
-                <div class="px-2 md:p-4" data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="800">
-                    <h2 class="text-2xl text-primary font-bold">{product.name}</h2>
+            <div className="grid lg:w-[80%] mx-auto sm:shadow-xl sm:border rounded-xl border-blue-200 md:border-x-8 grid-cols-1 md:grid-cols-2 gap-2 justify-center items-center py-4">
+                <div className="px-2 md:p-4" data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="800">
+                    <h2 className="text-2xl text-primary font-bold">{product.name}</h2>
                     <p className='text-md'>{product.description}</p>
                     <h1 className='text-2xl text-primary'>Price: <span className='text-accent font-bold'>${product.price}</span></h1>
                     <div className="">
@@ -84,11 +84,11 @@ const Parches = () => {
                         </div>
                         <div className="flex md:ml-4 w-32 justify-center items-center shadow-sm border-blue-900 border-x-4 rounded-3xl border py-2">
                             <span onClick={() => handleQuantity(false)} className='pl-2 font-bold cursor-pointer text-xl'>-</span>
-                            <input type="text" value={quantity} onChange={e => setQuantity(e.target.value)} class="text-center border-0 outline-0 font-bold text-primary w-full" />
+                            <input type="text" value={quantity} onChange={e => setQuantity(e.target.value)} className="text-center border-0 outline-0 font-bold text-primary w-full" />
                             <span onClick={() => handleQuantity(true)} className='pr-2 cursor-pointer font-bold text-xl'>+</span>
                         </div>
                     </div>
-                    <label for="order-modal" class="btn modal-button mt-5 mx-auto" disabled={(quantity < minQuantity) || (quantity > maxQuantity)}>Order now</label>
+                    <label for="order-modal" className="btn modal-button mt-5 mx-auto" disabled={(quantity < minQuantity) || (quantity > maxQuantity)}>Order now</label>
                 </div>
                 <div className='h-full order-first w-full mx-auto' data-aos="zoom-in-left" data-aos-delay="300" data-aos-duration="800">
                     <img src={product.img} className='w-full' alt="Movie"  />

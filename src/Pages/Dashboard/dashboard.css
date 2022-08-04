@@ -1,7 +1,41 @@
 
 .active{
     border-radius: 10px;
-    background-color: rgb(181, 181, 250);
-    border-left: 5px solid rgb(143, 143, 252);
-    color: rgb(5, 5, 101);
+    background-color: #eaeaea;
+    color: #057645;
 }
+
+.shadow-box{
+    box-shadow: 0, 0, 20px rgb(48, 11, 11);
+}
+.l-height{
+    line-height: -5px !important;
+}
+
+.hide-p{
+    display: block !important;
+}
+.order{
+    order: 2;
+    color: #f6eaf9;
+}
+
+.p-collaps{
+    padding: 0px !important;
+}
+.attendance-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    grid-gap: 10px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 400px) {
+    .hide-p{
+        display: none !important;
+    }
+    .fontSize{
+        font-size: 24px;
+        font-weight: 800;
+    }
+  }

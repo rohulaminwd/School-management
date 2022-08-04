@@ -7,12 +7,16 @@
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%);
 }
-.img-gallery:hover .gallery{
-    transform: scale(1);
+.gallery{
+    transition: 0.4s;
 }
 .img-gallery{
     transition: 04s;
 }
+.img-gallery:hover .gallery{
+    transform: scale(1);
+}
+
 .gallery{
     background-color: rgba(19, 107, 107, 0.692);
     transition: 0.4s;

@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
-import DeleteModalConfirm from './DeleteModalConfirm';
+import DeleteModalConfirm from '../Modul/DeleteModalConfirm';
 import MyOrderRow from './MyOrderRow'
 
 const MyOrders = () => {
@@ -23,8 +23,8 @@ const MyOrders = () => {
         <div>
             { (orders.length !== 0) && <h1 className='text-2xl my-8 text-center text-Primary font-bold'>My orders: {orders.length}</h1>}
             { (orders.length === 0) && <h1 className='text-2xl my-8 text-center text-accent font-bold'>Not Found Your order.! Pleace Order Now</h1>}
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
                     <thead>
                     <tr>
                         <th></th>

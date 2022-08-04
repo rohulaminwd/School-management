@@ -29,14 +29,14 @@ const DoctorRow = ({product, index, setDeletingModal}) => {
         <tr>
             <td className='font-bold'>{index + 1}</td>
             <td>
-                <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                        <div class="mask mask-squircle w-20 h-20">
+                <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                        <div className="mask mask-squircle w-20 h-20">
                             <img src={img} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
-                        <div class="font-bold">{productName}</div>
+                        <div className="font-bold">{productName}</div>
                         <h1 className='font-bold'>Price: <span className='text-primary'>{price}</span></h1>
                         <h1 className='font-bold'>Quantity: <span className='text-primary'>{quantity}</span></h1>
                     </div>
@@ -50,10 +50,10 @@ const DoctorRow = ({product, index, setDeletingModal}) => {
                 </div>
             </td>
             <th>
-                {  (status === 'pending') && <label onClick={() => handlePay('shipt')}  class="btn btn-secondary text-white btn-xs">{status}...</label>}
-                {  (status === 'shipt') && <label class="btn btn-success text-white btn-xs">{status}</label> }
-                {  (product.paid === true) && <p class="text-blue-900 mt-3">{product?.transactionId}</p>}
-                {  (!product.status) && <label class="btn btn-accent text-white btn-xs">Un Paid</label> }
+                {  (status === 'pending') && <label onClick={() => handlePay('shipt')}  className="btn btn-secondary text-white btn-xs">{status}...</label>}
+                {  (status === 'shipt') && <label className="btn btn-success text-white btn-xs">{status}</label> }
+                {  (product.paid === true) && <p className="text-blue-900 mt-3">{product?.transactionId}</p>}
+                {  (!product.status) && <label className="btn btn-accent text-white btn-xs">Un Paid</label> }
             </th>
         </tr>
     );

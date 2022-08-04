@@ -25,7 +25,7 @@ const Footer = () => {
                 </div>
                 <div className='rounded-xl shadow-md w-full border text-white border-cyan-700 border-x-8 p-2 md:p-3' data-aos="zoom-in-left" data-aos-delay="300" data-aos-duration="800">
                     <span className="text-xl font-bold">Quick Contact</span>
-                    <input type="text" placeholder="Email" class="input text-blue-900 input-bordered border-blue-900 input-blue-900 w-full" />
+                    <input type="text" placeholder="Email" className="input text-blue-900 input-bordered border-blue-900 input-blue-900 w-full" />
                     <button className='btn btn-secondary btn-sm md:btn-md text-white'>submit</button>
                 </div>
             </footer>

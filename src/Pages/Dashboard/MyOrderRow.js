@@ -9,14 +9,14 @@ const MyOrderRow = ({product, index, setDeletingModal}) => {
         <tr>
             <td className='font-bold'>{index + 1}</td>
             <td>
-                <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                        <div class="mask mask-squircle w-20 h-20">
+                <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                        <div className="mask mask-squircle w-20 h-20">
                             <img src={img} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
-                        <div class="font-bold">{productName}</div>
+                        <div className="font-bold">{productName}</div>
                         <h1 className='font-bold'>Price: <span className='text-primary'>{price}</span></h1>
                         <h1 className='font-bold'>Quantity: <span className='text-primary'>{quantity}</span></h1>
                     </div>
@@ -31,7 +31,7 @@ const MyOrderRow = ({product, index, setDeletingModal}) => {
                 </div>
             </td>
             <th>
-                <label onClick={() => setDeletingModal(product)} for="delete-confirm-modal" class="btn btn-accent text-white btn-xs" disabled={product.paid}>delete</label>
+                <label onClick={() => setDeletingModal(product)} for="delete-confirm-modal" className="btn btn-accent text-white btn-xs" disabled={product.paid}>delete</label>
             </th>
         </tr>
     );

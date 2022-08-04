@@ -82,12 +82,12 @@ const AddReview = () => {
                             </label>
                         </div>
                         <div className="flex items-center justify-between mb-5">
-                            <div class="rating">
-                                <input type="radio" value='1' onChange={e => setStar(e.target.value)} name="star" class="mask mask-star-2 bg-orange-400"/>
-                                <input type="radio" value='s2' onChange={e => setStar(e.target.value)} name="star" class="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" value='st3' onChange={e => setStar(e.target.value)} name="star" class="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" value='sta4' onChange={e => setStar(e.target.value)} name="star" class="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" value='star4' onChange={e => setStar(e.target.value)} name="star" class="mask mask-star-2 bg-orange-400" />
+                            <div className="rating">
+                                <input type="radio" value='1' onChange={e => setStar(e.target.value)} name="star" className="mask mask-star-2 bg-orange-400"/>
+                                <input type="radio" value='s2' onChange={e => setStar(e.target.value)} name="star" className="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" value='st3' onChange={e => setStar(e.target.value)} name="star" className="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" value='sta4' onChange={e => setStar(e.target.value)} name="star" className="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" value='star4' onChange={e => setStar(e.target.value)} name="star" className="mask mask-star-2 bg-orange-400" />
                             </div>
                             <div className="border border-blue-900 border-x-4 py-1  px-2 rounded-2xl  ml-3">
                                 <h1 className='text-primary font-bold'>{ratting.length} stare</h1>

@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link, useLocation, useNavigate,} from 'react-router-dom';
+import {Link, useLocation, useNavigate,} from 'react-router-dom';
 import useToken from '../../Hooks/useToken';
 
 const Login = () => {
     
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -16,7 +15,7 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-    const [token] = useToken(user || gUser);
+    const [token] = useToken(user);
     console.log(token)
     let signInError; 
     const navigate = useNavigate()
@@ -29,12 +28,12 @@ const Login = () => {
         }
     }, [token, from, navigate])
 
-    if(loading || gLoading){
+    if(loading){
         return <Loading></Loading>
     }
 
-    if(error || gError){
-        signInError = <p className='text-red-500 mb-2'><small>{error?.message || gError?.message}</small></p>
+    if(error){
+        signInError = <p className='text-red-500 mb-2'><small>{error?.message}</small></p>
     }
 
     const onSubmit = data => {
@@ -97,9 +96,8 @@ const Login = () => {
                     {signInError}
                     <input className='btn w-full uppercase font-bold max-w-xs' type="submit" value="Login"  />
                     </form>
-                    <p><small className='font-bold'>New to Doctors portal? <Link to='/signup' className='text-secondary'>Create new Account</Link></small></p>
                     <div className="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-dark btn-outline w-full max-w-xs">Sign in With Google</button>
+                    <p><small className='font-bold'>New to Doctors portal? <Link to='/signup' className='text-secondary'>Create new Account</Link></small></p>
                 </div>
             </div>
         </div>

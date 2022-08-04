@@ -40,37 +40,37 @@ const ParchesModal = ({order, setOrder}) => {
     return (
         <div>
 
-            <input type="checkbox" id="order-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
-            <label for="order-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>    
+            <input type="checkbox" id="order-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
+            <label for="order-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>    
             <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="sm:flex justify-between">
-                            <div class="form-control sm:w-[48%]">
-                                <label class="label">
-                                    <span class="label-text font-bold">Name</span>
+                            <div className="form-control sm:w-[48%]">
+                                <label className="label">
+                                    <span className="label-text font-bold">Name</span>
                                 </label>
-                                <input type="text" value={name} disabled class="input input-bordered font-bold w-full" />
+                                <input type="text" value={name} disabled className="input input-bordered font-bold w-full" />
                             </div>
-                            <div class="form-control sm:w-[48%] ">
-                                <label class="label">
-                                    <span class="label-text font-bold">Email</span>
+                            <div className="form-control sm:w-[48%] ">
+                                <label className="label">
+                                    <span className="label-text font-bold">Email</span>
                                 </label>
-                                <input type="text" value={email} disabled class="input input-bordered font-bold w-full" />
+                                <input type="text" value={email} disabled className="input input-bordered font-bold w-full" />
                             </div>
                         </div>
                         <div className="flex justify-between">
-                            <div class="form-control w-[48%] max-w-xs">
-                                <label class="label">
-                                    <span class="label-text font-bold">Price</span>
+                            <div className="form-control w-[48%] max-w-xs">
+                                <label className="label">
+                                    <span className="label-text font-bold">Price</span>
                                 </label>
-                                <input type="text" value={price} disabled class="input input-bordered font-bold w-full max-w-xs" />
+                                <input type="text" value={price} disabled className="input input-bordered font-bold w-full max-w-xs" />
                             </div>
-                            <div class="form-control w-[48%] max-w-xs">
-                                <label class="label">
-                                    <span class="label-text font-bold">Quantity</span>
+                            <div className="form-control w-[48%] max-w-xs">
+                                <label className="label">
+                                    <span className="label-text font-bold">Quantity</span>
                                 </label>
-                                <input type="text" value={quantity} disabled class="input input-bordered font-bold w-full max-w-xs" />
+                                <input type="text" value={quantity} disabled className="input input-bordered font-bold w-full max-w-xs" />
                             </div>
                         </div>
                         <div className="flex justify-between">

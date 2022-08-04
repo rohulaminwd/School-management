@@ -31,8 +31,8 @@ const ManageOrder = () => {
                 </div>
                 <h1 className='text-2xl md:w-full mb-3 font-bold text-orange-500'>Orders: {orderM?.length}</h1>
             </div>
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
                     <thead>
                     <tr>
                         <th></th>
