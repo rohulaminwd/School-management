@@ -19,6 +19,7 @@ const AddReview = () => {
             description: data.description,
             starr: ratting,
         }
+        
         console.log(review)
         // send data backend
         fetch('https://arcane-journey-12889.herokuapp.com/review', {

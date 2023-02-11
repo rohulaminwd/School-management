@@ -5,7 +5,7 @@ import Loading from '../Shared/Loading';
 import MangeOrderRow from './MangeOrderRow'
 
 const ManageOrder = () => {
-    const {data: orders, isLoading, refetch} = useQuery('order', () => fetch('https://arcane-journey-12889.herokuapp.com/order', {
+    const {data: orders, isLoading, refetch} = useQuery('order', () => fetch('http://localhost:5000/api/v1/user/signup', {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }

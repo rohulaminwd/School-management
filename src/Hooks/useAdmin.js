@@ -6,7 +6,7 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email
         if(email){
-            fetch(`https://arcane-journey-12889.herokuapp.com/admin/${email}`, {
+            fetch(`http://localhost:5000/admin/${email}`, {
                 method: 'Get',
             headers: {
                 'content-type': 'application/json',
@@ -17,7 +17,7 @@ const useAdmin = user => {
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)
-                console.log(data)
+                console.log(data.admin, "kdfkd")
                 setAdminLoading(false);
             })    
         }

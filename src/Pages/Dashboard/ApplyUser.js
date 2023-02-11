@@ -13,6 +13,7 @@ const ApplyUser = ({setApplyUsers}) => {
     const [addModal, setAddModal] = useState(null)
     const [title, setTitle] = useContext(titleContext)
     setTitle("Apply Users")
+    
     const {data: applyUsers, isLoading, refetch} = useQuery('user', () => fetch('http://localhost:5000/applyUser', {
         method: 'GET',
         headers: {

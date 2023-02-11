@@ -9,6 +9,7 @@ const useTimer = (Name) => {
 
     const calculateTimeLeft = () => {
         let year = new Date().getFullYear();
+
         let difference = +new Date(date) - +new Date();
 
         let timeLeft = {};
@@ -33,7 +34,6 @@ const useTimer = (Name) => {
         const timer = setTimeout(() => {
           setTimeLeft(calculateTimeLeft());
         }, 1000);
-      
         return () => clearTimeout(timer);
       }, [calculateTimeLeft()]);
 

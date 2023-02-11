@@ -5,6 +5,7 @@ import { toast} from 'react-toastify';
 import profile from '../../assets/images/Student-avatar.jpg'
 
 const UpdateModul = ({setUpdateModal, refetch, updateModal}) => {
+
     
     const user = updateModal;
     const [image, setImage] = useState();
